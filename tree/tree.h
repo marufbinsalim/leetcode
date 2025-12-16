@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+#include <queue>
+#include <optional>
 
 struct TreeNode {
     int val;
@@ -24,6 +27,9 @@ public:
 
     void printTree(TreeNode* node, const std::string& prefix = "", bool isLeft = true);
     void print();
+
+    // NEW: Create tree from array (level-order)
+    void fromArray(const std::vector<std::optional<int>>& arr);
 };
 
 #endif // TREE_H

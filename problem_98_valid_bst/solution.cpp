@@ -1,5 +1,8 @@
-#include "tree.h"
+#include "../tree/tree.h"
+#include <optional>
+#include <vector>
 #include <climits>
+#include <iostream>
 
 bool isValidBST(TreeNode* root, long long min, long long max) {
     if(root == nullptr) return true;
@@ -16,27 +19,23 @@ bool isValidBST(TreeNode* root) {
 
 int main() {
 
-    // invalid tree
+    // Invalid tree: [5,1,4,5,?,6] (LeetCode-style)
     Tree tree;
-    tree.setRoot(5);
-    tree.addLeft(tree.root, 1);
-    tree.addRight(tree.root, 4);
-    tree.addLeft(tree.root->right, 4);
-    tree.addRight(tree.root->left, 5);
-    tree.addLeft(tree.root->right, 6);
+    std::vector<std::optional<int>> arr1 = {5, 1, 4, 5, std::nullopt, 6};
+    tree.fromArray(arr1);
+
     std::cout << "Tree structure:\n";
     tree.print();
     std::cout << "Is valid BST: " << (isValidBST(tree.root) ? "Yes" : "No") << std::endl;
 
+    // Valid BST: [5,4,7,3]
     Tree validBST;
-    validBST.setRoot(5);
-    validBST.addLeft(validBST.root, 4);
-    validBST.addLeft(validBST.root, 3);
-    validBST.addRight(validBST.root, 7);
+    std::vector<std::optional<int>> arr2 = {5, 4, 7, 3};
+    validBST.fromArray(arr2);
 
-
-    std::cout << "Valid BST:\n";
+    std::cout << "\nValid BST:\n";
     validBST.print();
     std::cout << "Is valid BST: " << (isValidBST(validBST.root) ? "Yes" : "No") << std::endl;
+
     return 0;
 }
