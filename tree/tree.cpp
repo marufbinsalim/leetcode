@@ -4,6 +4,10 @@ void Tree::setRoot(int val) {
     if (!root) root = new TreeNode(val);
 }
 
+void Tree::setTree(TreeNode* node) {
+    root = node;
+}
+
 void Tree::addLeft(TreeNode* parent, int val) {
     if (!parent) return;
     parent->left = new TreeNode(val);

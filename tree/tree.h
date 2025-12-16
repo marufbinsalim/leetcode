@@ -22,6 +22,7 @@ public:
     Tree() = default;
 
     void setRoot(int val);
+    void setTree(TreeNode* node);
     void addLeft(TreeNode* parent, int val);
     void addRight(TreeNode* parent, int val);
 
