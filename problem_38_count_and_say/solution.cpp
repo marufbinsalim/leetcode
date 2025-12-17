@@ -38,7 +38,7 @@ int main()
 {
     Solution solution;
     std::cout << "112223333 RLE Encoding: " <<     solution.RleEncoding("112223333") << std::endl;
-    for (int i = 1; i <= 30; i++)
+    for (int i = 1; i <= 8; i++)
     {
         std::cout << i << "th RLE Encoding: " << solution.countAndSay(i) << std::endl;
     }
