@@ -25,8 +25,7 @@ ListNode *List::fromList(const std::vector<int> &list)
 
     ListNode *head = new ListNode(list[0]);
     ListNode *current = head;
-    for (int i = 1; i < list.size(); i++)
-    {
+    for (int i = 1; i < list.size(); i++) {
         current->next = new ListNode(list[i]);
         current = current->next;
     }
