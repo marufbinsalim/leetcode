@@ -35,7 +35,7 @@ echo "Found problem directory: $PROBLEM_DIR"
 echo "Compiling solution..."
 
 # Compile the solution with tree.cpp
-g++ "$PROBLEM_DIR/solution.cpp" tree/tree.cpp -o "$PROBLEM_DIR/a.out"
+g++ "$PROBLEM_DIR/solution.cpp" tree/tree.cpp list/list.cpp -o "$PROBLEM_DIR/a.out"
 
 if [ $? -ne 0 ]; then
     echo "Compilation failed!"
