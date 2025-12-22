@@ -34,6 +34,7 @@ public:
         int m = obstacleGrid.size();
         int n = obstacleGrid[0].size();
         this->obstacleGrid = obstacleGrid;
+        if(obstacleGrid[m-1][n-1] == 1) return 0;
         return traverse(0, 0, m, n);
         
     }
